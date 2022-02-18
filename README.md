@@ -119,7 +119,7 @@ expected output:
 
 ![alt text](https://res.cloudinary.com/viviennoel07/image/upload/v1645187649/pokemon/Capture_d_e%CC%81cran_2022-02-18_a%CC%80_13.33.58_hvdzfp.png)
 
-# KEY FUNCTIONALITIES OF THIS EXERCICE
+# KEY FUNCTIONALITIES OF THIS EXERCISE
 
 ## The requirements
 
