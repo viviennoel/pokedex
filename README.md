@@ -18,14 +18,57 @@ In order to clone the repository, run :
 git clone https://github.com/viviennoel/pokedex.git
 ```
 
-# FRONTEND
+# BACKEND
 
-##### The following command lines should be used from the folder 'frontend'.
+##### The following command lines should be used from the folder 'backend'.
 
 ## Setup of the backend
 
 This backend was created using Node & MongoDB.
-In order to start your project, you need to create a .env file with the following information:
+```diff
+- In order to start your project, you need to create a .env file at the root of the backend folder with the following information
+- The .env file should be at the same level than the package.json
+```
+
+```
+NODE_ENV_DB_ID=vivien_noel
+NODE_ENV_DB_PASSWORD=O6FCWBl6umMi12cM
+NODE_ENV_DB_NAME=pokedex
+NODE_ENV_PORT=3001
+```
+
+Please remember that these information shouldn't be shared in a real project, as the .env file ensure that these information remain private.
+
+### Getting started
+
+In order to start your server, you need to install the dependencies using npm:
+```
+npm install
+```
+
+And then to enter the following command line:
+```
+npm run dev
+```
+
+##### The server is now listening.
+
+You can therefore go to your frontend and start your application. 
+
+***success! Your app is ready and ready to use at http://localhost:3001***
+
+
+# FRONTEND
+
+##### The following command lines should be used from the folder 'frontend'.
+
+## Setup of the frontend
+
+This frontend was created using React.
+```diff
+- In order to start your project, you need to create a .env file at the root of the fontend folder with the following information
+- The .env file should be at the same level than the package.json
+```
 
 ```
 REACT_APP_API_ENDPOINT=http://localhost:3001
@@ -57,41 +100,7 @@ Now that npm have installed the dependencies, you can start the web application 
 npm start
 ```
 
-# BACKEND
-
-##### The following command lines should be used from the folder 'backend'.
-
-## Setup of the backend
-
-This backend was created using Node & MongoDB.
-In order to start your project, you need to create a .env file with the following information:
-
-```
-NODE_ENV_DB_ID=vivien_noel
-NODE_ENV_DB_PASSWORD=O6FCWBl6umMi12cM
-NODE_ENV_DB_NAME=pokedex
-NODE_ENV_PORT=3001
-```
-
-Please remember that these information shouldn't be shared in a real project, as the .env file ensure that these information remain private.
-
-### Getting started
-
-In order to start your server, you need to install the dependencies using npm:
-```
-npm install
-```
-
-And then to enter the following command line:
-```
-npm run dev
-```
-
-##### The server is now listening.
-
-You can therefore go to your frontend and start your application. 
-
-***success! Your app is ready and ready to use at http://localhost:3001***
+# Unit tests
 
 You can then launch the unit tests with the following commands.
 N.B: A test plan need to be established for an application in order to test every behavior. Because of the time allowed to this test, this plan haven't been complited and no E2E tests have been created.  
