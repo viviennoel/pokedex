@@ -1,12 +1,13 @@
 {
   "name": "pokedex_backend",
   "version": "1.0.0",
-  "description": "technical test for abbeal - pokedex",
+  "description": "technical test for abbeal - Pokedex",
   "main": "index.js",
   "dependencies": {
     "body-parser": "^1.19.2",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
+    "helmet": "^5.0.2",
     "mongodb": "^4.3.1",
     "mongoose": "^6.2.2",
     "mongoose-unique-validator": "^3.0.0"

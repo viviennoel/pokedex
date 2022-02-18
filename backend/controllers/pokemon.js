@@ -39,8 +39,6 @@ exports.GetOneByName = (req, res) => {
 // GET THE POKEMON BY COLLECTION
 exports.GetByType = (req, res) => {
     var pokemonType = encodeURIComponent(req.params.pokemonType.toLowerCase());
-    console.log('pokemonCollection', pokemonType)
-
     Pokemon.find(
         { type: {
             $in: pokemonType
