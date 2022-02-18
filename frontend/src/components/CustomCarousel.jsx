@@ -11,14 +11,15 @@ function CustomCarousel(props){
 					
 						<Carousel.Item key={pokemon.name}>
 						<img
+							data-testid={`image_${pokemon.name}`}
 							className="d-block m-auto pb-1"
 							src={pokemon.sprite}
 							alt={pokemon.name}
 						/>
 						<Carousel.Caption>
-						<Link to={`/pokemon/${pokemon.name}`}>
+						<Link to={`/pokemon/${pokemon.name}`} data-testid={`name_${pokemon.name}`}>
 							<h3>{pokemon.name}</h3>
-							<p>This pokemon is a pokemon of 
+							<p data-testid={`description_${pokemon.name}`}>This pokemon is a pokemon of 
 								<b>
 								{pokemon.type.map((typeOfPokemon, index)=>{
 									return(index === pokemon.type.length-1 ? ` ${typeOfPokemon}` : ` ${typeOfPokemon} and`)

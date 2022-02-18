@@ -1,0 +1,111 @@
+[
+    {
+        "_id": "620e987a759bccdb37c42478",
+        "datenow": 1519211809934,
+        "name": "pikatchu",
+        "sprite": "https://res.cloudinary.com/viviennoel07/image/upload/v1645134722/pokemon/pikatchu_tqfjik.png",
+        "type": [
+            "earth",
+            "electricity"
+        ],
+        "number": 1
+    },
+    {
+        "_id": "620e9d26e503e5aefced1ec5",
+        "number": 2,
+        "datenow": 1519211809934,
+        "name": "eevee",
+        "sprite": "https://res.cloudinary.com/viviennoel07/image/upload/v1645134725/pokemon/eevee_b5ijrk.png",
+        "type": [
+            "earth",
+            "fire"
+        ]
+    },
+    {
+        "_id": "620e9dc3e503e5aefced1ec6",
+        "number": 3,
+        "datenow": 1519211809934,
+        "name": "squirtle",
+        "sprite": "https://res.cloudinary.com/viviennoel07/image/upload/v1645134721/pokemon/squirtle_bjgasd.png",
+        "type": [
+            "earth",
+            "water"
+        ]
+    },
+    {
+        "_id": "620e9df8e503e5aefced1ec7",
+        "number": 4,
+        "datenow": 1519211809934,
+        "name": "bulbasaur",
+        "sprite": "https://res.cloudinary.com/viviennoel07/image/upload/v1645135965/pokemon/bulbasaur_pxiqmr.png",
+        "type": [
+            "water",
+            "vegetal"
+        ]
+    },
+    {
+        "_id": "620eb509e503e5aefced1ec8",
+        "number": 5,
+        "datenow": 1519211809934,
+        "name": "jigglypuff",
+        "sprite": "https://res.cloudinary.com/viviennoel07/image/upload/v1645134700/pokemon/jigglypuff_yyycmv.png",
+        "type": [
+            "earth",
+            "water"
+        ]
+    },
+    {
+        "_id": "620ec191e503e5aefced1eca",
+        "number": 6,
+        "datenow": 1519211809934,
+        "name": "snorlax",
+        "sprite": "https://res.cloudinary.com/viviennoel07/image/upload/v1645135964/pokemon/snorlax_jprfno.png",
+        "type": [
+            "earth",
+            "water"
+        ]
+    },
+    {
+        "_id": "620ec1d8e503e5aefced1ecb",
+        "number": 7,
+        "datenow": 1519211809934,
+        "name": "mew",
+        "sprite": "https://res.cloudinary.com/viviennoel07/image/upload/v1645134716/pokemon/mew_psxgqb.png",
+        "type": [
+            "fire",
+            "electricity"
+        ]
+    },
+    {
+        "_id": "620ec236e503e5aefced1ecc",
+        "number": 8,
+        "datenow": 1519211809934,
+        "name": "misty",
+        "sprite": "https://res.cloudinary.com/viviennoel07/image/upload/v1645135963/pokemon/misty_gm94cr.png",
+        "type": [
+            "earth",
+            "electricity"
+        ]
+    },
+    {
+        "_id": "620ec278e503e5aefced1ecd",
+        "number": 9,
+        "datenow": 1519211809934,
+        "name": "dragonair",
+        "sprite": "https://res.cloudinary.com/viviennoel07/image/upload/v1645135960/pokemon/dragonair_jt9jhj.png",
+        "type": [
+            "water"
+        ]
+    },
+    {
+        "_id": "620ec2abe503e5aefced1ece",
+        "number": 10,
+        "datenow": 1519211809934,
+        "name": "mewtwo",
+        "sprite": "https://res.cloudinary.com/viviennoel07/image/upload/v1645135971/pokemon/mewtwo_blth7z.png",
+        "type": [
+            "water",
+            "electricity"
+        ]
+    }
+]
