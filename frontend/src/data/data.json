@@ -1,5 +1,0 @@
-[
-    {"_id":{"$oid":"620e186b57938a80e1ebc33e"},"number":{"$numberDecimal":"1"},"datenow":{"$numberLong":"1519211809934"},"name":"Picatchu","sprite":"https://res.cloudinary.com/viviennoel07/image/upload/v1617366919/Food_shaddow_swbkpm.jpg","type":"earth"},
-    {"_id":{"$oid":"620e1b8857938a80e1ebc33f"},"number":{"$numberDecimal":"2"},"datenow":{"$numberLong":"1519211809934"},"name":"Bulbizard","sprite":"https://res.cloudinary.com/viviennoel07/image/upload/v1617358044/Cients_experience_cbknba.jpg","type":"water"},
-    {"_id":{"$oid":"620e1bd257938a80e1ebc340"},"number":{"$numberDecimal":"3"},"datenow":{"$numberLong":"1519211809934"},"name":"Ratatak","sprite":"https://res.cloudinary.com/viviennoel07/image/upload/v1617129575/Food_shaddow_afcimk.jpg","type":"earth"}
-]

@@ -1,37 +1,84 @@
 import {Form, FormControl, Button} from 'react-bootstrap';
-import pokemonList from './../data/data.json';
+import { Typeahead } from 'react-bootstrap-typeahead';
+import 'react-bootstrap-typeahead/css/Typeahead.css';
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux'
+import { addPokemon } from '../store/pokemon/pokemon';
 
 const SearchBar = (props) => {
-    const [matchingPokemons, setMatchingPokemons] = useState(null);
+    const [singleSelections, setSingleSelections] = useState([]);
+    const [pokemonList, setpokemonList] = useState(null);
+    const birds = useSelector(state => state.pokemonHighlight);
+    console.log('dataREDUC', birds)
+    const dispatch = useDispatch();
+
+    console.log(singleSelections)
     
-    // Function triggered on change of SearchBar value
-    const handleSearch = (value) => {
-        let matchingPokemonsSearch = pokemonList.filter(pokemon => {
-            return(
-                pokemon.name && pokemon.name.startsWith(value) // Check the input
-                && pokemon.name // Return the value if it matches the search
-            )
-        });
-        setMatchingPokemons(value==="" ? null : matchingPokemonsSearch); // Update the state
-    }
+    // Get the data and display a list of suggestions
+    useEffect(()=>{
+        let isComponentMounted = true;
+        const savePokemonList = async (pokemonListToCache) => {
+            localStorage.setItem('pokemonList', JSON.stringify(pokemonListToCache));
+            if(isComponentMounted) {
+                setpokemonList(pokemonListToCache);
+            }
+            console.log(pokemonList)
+        }
+        const fetchData = () => {
+            // Verify the cache
+            const pokemonListCache = JSON.parse(localStorage.getItem('pokemonList'));
+            console.log(pokemonListCache)
+            if (pokemonListCache){
+                console.log('cache again')
+                setpokemonList(pokemonListCache)
+            } else {
+                // Get the data from the backend via fetch
+                fetch(process.env.REACT_APP_API_ENDPOINT + '/api/pokemon/GetAll', { method: "GET" })
+                .then(async (response) => {
+                    const pokemonListToCache = await response.json()
+                    await savePokemonList(pokemonListToCache);
+                })
+                .catch(function (error) {
+                    console.log('GET ' + error.message)
+                })
+            }
+        }
+        fetchData();
+        return () => {
+            isComponentMounted = false;
+          }
+    }, [])
+
     return(
-        <div>
-            <Form className="d-flex pt-5 pt-lg-0">
-                <FormControl type="search" placeholder="Search" className="me-2" aria-label="Search" onChange={e => handleSearch(e.target.value)}/>
-                <Button variant="outline-light">Search</Button>
+        <div className="w-100 SearchBar_container">
+            <Form className="d-flex justify-content-around">
+                <Typeahead
+                    id="basic-typeahead-single"
+                    labelKey="name"
+                    onChange={setSingleSelections}
+                    options={pokemonList}
+                    placeholder="Choose a name"
+                    selected={singleSelections}
+                />
+                <p className="m-auto">Or</p>
+                <Typeahead
+                    id="basic-typeahead-single"
+                    labelKey="_id"
+                    onChange={setSingleSelections}
+                    options={pokemonList}
+                    placeholder="Choose an ID"
+                    selected={singleSelections}
+                />
             </Form>
-            {/* We add a field to present the matching pokemons to the user */}
-            <div id={`SearchBar_options${props.idSearch}`} className={matchingPokemons ? 'SearchBar_options px-4 py-1' : ''}>
-                {matchingPokemons && matchingPokemons.map((pokemon)=>{
-                    return(
-                        <div key={pokemon.name}><Link to={`/pokemon/${pokemon.name}`}>{pokemon.name}</Link></div>
-                    )
-                })}
-            </div>
+
+        <div>
+          <button type="submit" onClick={(event)=>{
+            event.preventDefault();
+            dispatch(addPokemon(singleSelections))
+        }}>Add</button>
+        <h2>{birds}</h2>
         </div>
-        
+        </div>  
     )
 }
 

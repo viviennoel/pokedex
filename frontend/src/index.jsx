@@ -3,12 +3,19 @@ import React, { Suspense, Fragment } from 'react';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import LoaderSuspense from './components/LoaderSuspense';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import pokemon from './store/pokemon/pokemon';
+
+const store = createStore(pokemon);
 
 ReactDOM.render(
   <React.StrictMode>
     <Fragment>
       <Suspense fallback={LoaderSuspense}>
-        <App />
+        <Provider store={store}>
+          <App />
+        </Provider>
       </Suspense>
     </Fragment>
   </React.StrictMode>,

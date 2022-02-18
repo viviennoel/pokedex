@@ -8,11 +8,13 @@ function Homepage() {
 	return (
 		<div className="container">
             {/* Thanks to the HOC, the components will fetch different information (props) */}
-			{/* <h2 className="my-5">Earth powers</h2> */}
-			{/* <Carousel dataFilter="earth"></Carousel> */}
+			<h2 className="mt-5">Pokemons of Water</h2>
+			<p className="mb-5">The pokemons of water are the more resistant in case of a fight with a fire pokemon. They like to swim and are generally very friendly!</p>
+			<Carousel dataFilter="water"></Carousel>
 
-			<h2 className="my-5">List of all the data</h2>			
-            <Accordion dataFilter="aquatic"></Accordion>
+			<h2 className="mt-5">Pokemons of Fire</h2>
+			<p className="mb-5">The pokemons of fire are very aggressive, but as well nice when they like the person. They are warm, of course, and they like to run and burn things.</p>			
+            <Accordion dataFilter="fire"></Accordion>
 		</div>
 	);
 }

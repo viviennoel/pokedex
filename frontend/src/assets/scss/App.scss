@@ -1,5 +1,42 @@
-@import './../bootstrap-5.1.3/scss/bootstrap.scss';
-@import './SearchBar.scss';
-@import './LoaderSuspense.scss'
+@import './../bootstrap-5.1.3/scss/bootstrap.scss'; // Import of bootstrap 5.1.3
+@import './SearchBar.scss'; // Import of the scss files for the different components
+@import './LoaderSuspense.scss';
+@import './Carousel.scss';
+@import './Pokemon.scss';
 
 // The following allows to surcharge the style of bootstrap
+
+@font-face {
+    font-family: 'Noto';
+    src: url('./../fonts/NotoSerif-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'CaveatBrush';
+    src: url('./../fonts/CaveatBrush-Regular.ttf') format('truetype');
+}
+
+h1{
+    font-family: "CaveatBrush";
+}
+h2{
+    color:$gray-500;
+}
+p{
+    color:$gray-600;
+}
+// Accessibility!
+a{
+    color:$gray-600;
+    text-decoration: none;
+    &:hover{
+        color:$gray-300;
+        text-decoration: underline;
+    }
+}
+#root{
+    background-image: linear-gradient(to right, $gray-900, $black, $gray-900);
+    min-height:100vh;
+    font-family:'Noto';
+    padding-bottom:100px;
+}

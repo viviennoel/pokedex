@@ -6,7 +6,7 @@ const pokemonSchema = mongoose.Schema({
     name: { type: String, required: true, unique:true },
     datenow: { type: Number, required: true },
     sprite: { type: String, required: true },
-    type: { type: String, required: true },
+    type: { type: Array, required: true },
 })
 
 // makes error handling easier (the error is clearer if not unique data is entered)

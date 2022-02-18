@@ -1,0 +1,46 @@
+.carousel{
+    background-image: radial-gradient($gray-900, $black);
+    .carousel-caption {
+        position: unset;
+        color: $gray-600;
+        &:hover{
+            animation: shake 1s linear 0.5s infinite;
+        }   
+    }
+    img{
+        max-height:250px;
+        width:auto;
+        animation:pulse 3s linear infinite;
+        opacity:0.9;
+        &:hover {
+            transition: opacity 3s ease-in 1s forwards;
+            opacity: 1;
+        }
+    }
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.95);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+@keyframes shake {
+    from {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(20px);
+    }
+    75% {
+        transform: translateX(-20px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
