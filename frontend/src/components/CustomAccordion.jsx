@@ -10,7 +10,7 @@ const CustomAccordion = (props) => {
                         <Accordion.Header>{pokemon.name}</Accordion.Header>
                         <Accordion.Body>
                             <img
-                            className="d-block w-100"
+                            className="d-block m-auto"
                             src={pokemon.sprite}
                             alt="First slide"
                         />
@@ -20,10 +20,10 @@ const CustomAccordion = (props) => {
             </Accordion>
         )
     } else {
-            return(
-                <LoaderSuspense></LoaderSuspense>
-            )
-        }
+        return(
+            <LoaderSuspense></LoaderSuspense>
+        )
+    }
 };
 
 export default CustomAccordion;

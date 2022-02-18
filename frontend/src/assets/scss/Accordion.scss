@@ -1,0 +1,14 @@
+.accordion-item{
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    .accordion-button{
+        background-image: radial-gradient($gray-900, $black);
+        color:$gray-400;
+    }
+    .accordion-body{
+        background-image: radial-gradient($gray-800, $gray-900);
+        img{
+            max-height:30vh;
+            width:auto;
+        }
+    }
+}

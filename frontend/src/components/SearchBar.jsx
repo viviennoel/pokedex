@@ -1,29 +1,17 @@
-import {Form, FormControl, Button} from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 import { Typeahead } from 'react-bootstrap-typeahead';
 import 'react-bootstrap-typeahead/css/Typeahead.css';
 import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { addPokemon } from '../store/pokemon/pokemon';
 
 const SearchBar = (props) => {
     const [singleSelections, setSingleSelections] = useState([]);
     const [pokemonList, setpokemonList] = useState(null);
-    const birds = useSelector(state => state.pokemonHighlight);
-    console.log('dataREDUC', birds)
     const dispatch = useDispatch();
-
-    console.log(singleSelections)
     
     // Get the data and display a list of suggestions
     useEffect(()=>{
-        let isComponentMounted = true;
-        const savePokemonList = async (pokemonListToCache) => {
-            localStorage.setItem('pokemonList', JSON.stringify(pokemonListToCache));
-            if(isComponentMounted) {
-                setpokemonList(pokemonListToCache);
-            }
-            console.log(pokemonList)
-        }
         const fetchData = () => {
             // Verify the cache
             const pokemonListCache = JSON.parse(localStorage.getItem('pokemonList'));
@@ -43,43 +31,48 @@ const SearchBar = (props) => {
                 })
             }
         }
+        let isComponentMounted = true;
+        const savePokemonList = async (pokemonListToCache) => {
+            localStorage.setItem('pokemonList', JSON.stringify(pokemonListToCache));
+            if(isComponentMounted) {
+                setpokemonList(pokemonListToCache);
+            }
+        }
         fetchData();
         return () => {
             isComponentMounted = false;
           }
     }, [])
 
+    useEffect(()=>{
+        singleSelections[0] && dispatch(addPokemon(singleSelections[0]));
+    }, [singleSelections, dispatch])
+
     return(
         <div className="w-100 SearchBar_container">
             <Form className="d-flex justify-content-around">
+                {/* SearchBar Name */}
                 <Typeahead
                     id="basic-typeahead-single"
                     labelKey="name"
                     onChange={setSingleSelections}
-                    options={pokemonList}
+                    options={pokemonList ? pokemonList : ['loading']}
                     placeholder="Choose a name"
                     selected={singleSelections}
                 />
-                <p className="m-auto">Or</p>
+                <p className="m-auto px-1">Or</p>
+                {/* SearchBar Number */}
                 <Typeahead
                     id="basic-typeahead-single"
                     labelKey="_id"
                     onChange={setSingleSelections}
-                    options={pokemonList}
+                    options={pokemonList ? pokemonList : ['loading']    }
                     placeholder="Choose an ID"
                     selected={singleSelections}
                 />
             </Form>
-
-        <div>
-          <button type="submit" onClick={(event)=>{
-            event.preventDefault();
-            dispatch(addPokemon(singleSelections))
-        }}>Add</button>
-        <h2>{birds}</h2>
-        </div>
-        </div>  
-    )
+    </div>
+    );
 }
 
 export default SearchBar;

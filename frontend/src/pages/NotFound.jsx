@@ -1,7 +1,8 @@
 function NotFound(){
     return(
         <div>
-            <p>Not found</p>
+            {/* TODO: Custom this page */}
+            <p>No pokemon here!! - ERROR 404</p>
         </div>
     )
 }

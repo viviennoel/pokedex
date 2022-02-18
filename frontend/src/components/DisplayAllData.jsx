@@ -12,7 +12,7 @@ const DisplayAllData = Component => function DisplayCorrectData({ ...props }) {
         .catch(function (error) {
             console.log('GET ' + error.message)
         })
-    }, [])
+    }, [props.dataFilter])
 
     return (
         <Component pokemonList={pokemonFromType ? pokemonFromType : null} />

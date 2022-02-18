@@ -11,7 +11,6 @@ function App() {
   return (
     <React.Suspense fallback={
       <div>
-        <Header></Header>
         <LoaderSuspense></LoaderSuspense>
       </div>
     }>

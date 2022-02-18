@@ -4,7 +4,7 @@
     font-family:'Noto';
 }
 #pokemonHighlight_image{
-    animation:walk 15s ease-in infinite;
+    animation:walk 15s linear infinite;
     max-height: 50vh;
 }
 
@@ -13,11 +13,11 @@
         transform:translateX(0) rotate(0deg);
     }
     25%{
-        transform:translateX(-20vw) rotate(3deg);
+        transform:translateX(-10vw) rotate(3deg);
     }
     
     75%{
-        transform:translateX(20vw) rotate(-3deg);
+        transform:translateX(10vw) rotate(-3deg);
     }
     
     to{
