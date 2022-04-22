@@ -41,9 +41,9 @@ Please remember that these information shouldn't be shared in a real project, as
 
 ### Getting started
 
-In order to start your server, you need to install the dependencies using npm:
+In order to start your server, you need to install the dependencies using npm. In order to install them without vulnerabilities, use :
 ```
-npm install
+npm ci
 ```
 
 And then to enter the following command line:
@@ -54,8 +54,6 @@ npm run dev
 ##### The server is now listening.
 
 You can therefore go to your frontend and start your application. 
-
-***success! Your app is ready and ready to use at http://localhost:3001***
 
 
 # FRONTEND
@@ -85,7 +83,7 @@ In order to preserve the security ans integrity of the solution, the vulnerabili
 In order to install the packages, use the command bellow:
 
 ```
-npm install
+npm ci
 ```
 
 ###### The command npm ci is used to download the correcetd dependencies, once the package-lock have been updated.
